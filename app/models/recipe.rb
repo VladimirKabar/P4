@@ -10,7 +10,7 @@ class Recipe < ActiveRecord::Base
                     :storage => :s3,
                     :s3_credentials => { :access_key_id => AppConfig['s3']['access_id'], :secret_access_key => AppConfig['s3']['secret_key'] },
                     :path => ': attachment/:id/:style.:extension',
-                    :bucket => 'vladimirbucket'
+                    :bucket => 'vladimirbucket's
 =end
 
   validates_attachment_presence :image
