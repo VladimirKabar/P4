@@ -1,0 +1,35 @@
+<div class="recipe-show">
+  <div class="container">
+    <h2><%= @recipe.name %></h2>
+    <img class="arrow" src="http://s3.amazonaws.com/codecademy-content/courses/rails-auth/img/arrow.svg" width="80" height="40">
+
+    <div class="img_container">
+      <%= image_tag @recipe.image %>
+      <%= image_tag @recipe.image.url(:small) %>
+    </div>
+    <div class="recipe-info">
+      <div class="ingredients">
+        <p>Składniki: </p>
+      <p>  <%= @recipe.ingredients %></p>
+      </div>
+
+
+      <div class="instructions">
+        <p>Wykonanie: </p>
+        <p><%= @recipe.instructions %></p>
+      </div>
+    </div>
+
+    <% if current_user && current_user.editor? %>
+        <p class="recipe-edit"><%= link_to "Edit recipe", edit_recipe_path(@recipe.id) %></p>
+    <% end %>
+
+    <% if current_user && current_user.admin? %>
+        <p class="recipe-edit"><%= link_to "Edit recipe", edit_recipe_path(@recipe.id) %></p>
+
+        <p class="recipe-delete"><%= link_to "Delete", recipe_path(@recipe), method: "delete" %><p>
+    <% end %>
+
+
+  </div>
+</div>

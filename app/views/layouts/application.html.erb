@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To jest strona o przepisach</title>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="header">
+  <div class="container">
+
+    <div class="nav">
+      <% if current_user %>
+          <ul>
+            <li>Zalogowany : <%= current_user.email %></li>
+            <li><%= link_to "Stona domowa", root_path %></a></li>
+            <li><%= link_to "Powrót", 'javascript:history.go(-1);' %></li>
+            <% if current_user && current_user.editor? %>
+                <li><%= link_to "Dodaj przepis", new_path %></a></li>
+            <% end %>
+            <li><%= link_to "Wyloguj się", logout_path, method: "delete" %></li>
+            <li><%= link_to "Kontakt", contacts_path %></li>
+          </ul>
+      <% else %>
+          <ul>
+            <li><%= link_to "Strona domowa", root_path %></a></li>
+            <% if current_user && current_user.editor? %>
+                <li><%= link_to "Dodaj przepis", new_path %></a></li>
+            <% end %>
+            <li><%= link_to "Zaloguj się", login_path %></a></li>
+            <li><%= link_to "Kontakt", contacts_path %></li>
+          </ul>
+      <% end %>
+    </div>
+
+    <div class="logo">
+    </div>
+
+  </div>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

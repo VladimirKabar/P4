@@ -1,0 +1,11 @@
+development:
+s3:
+    bucket_name: vladibucket
+    access_id: AKIAIH66X3FKMSEYYZUA
+    secret_key: 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
+
+production:
+s3:
+    bucket_name: vladibucket
+    access_id: AKIAIH66X3FKMSEYYZUA
+    secret_key: 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
