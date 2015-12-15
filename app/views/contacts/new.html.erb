@@ -4,11 +4,11 @@
     <%= simple_form_for @contact, :html => {:class => "form-horizontal"} do |f| %>
         <%= f.input :name, :placeholder => 'np. imie i nazwisko', :required => true %>
         <%= f.input :email, :placeholder => 'np. nazwa@nazwa.com', :required => true %>
-        <%= f.input :message, :placeholder => 'np. swietne przepise oby tak dalej!',:as => :text, :required => true %>
+        <%= f.input :message, :placeholder => 'np. swietne przepisy oby tak dalej!',:as => :text, :required => true %>
         <div class="hidden">
           <%= f.input :nickname, :hint => "zostaw to pole puste" %>
         </div>
-        <%= f.button :submit, "Wyslij wiadomosc", :class => "btn btn-primary" %>
+        <%= f.button :submit, "Wyślij wiadomość", :class => "btn btn-primary" %>
     <% end %>
   </div>
 </div>
