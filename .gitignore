@@ -21,6 +21,7 @@
 .idea
 local_env.yml
 ENV.yml
+/config/aws.yml
 aws.yml
 .ENV
 .ENV.yml
