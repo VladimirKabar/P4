@@ -2,10 +2,10 @@
   <div class="container">
 
     <%= form_for :recipe, url: new_path, :html => { :multipart => true } do |r| %>
-        <%= r.text_area :name, :placeholder => 'Name', :value => nil, :required => true %>
-        <%= r.text_area :ingredients, :placeholder => 'Ingredients',:required => true %>
-        <%= r.text_area :instructions, :placeholder => 'Instructions',:required => true %>
-        <%= r.select :cuisine_id, options_for_select([['Polska', 1], ['Francja', 2], ['Eksperymenty', 3]]), {:include_blank => "Wybierz kuchnie ...."}, {:class => 'recipe-edit'} %>
+        <%= r.text_area :name, :placeholder => 'Nazwa', :value => nil, :required => true %>
+        <%= r.text_area :ingredients, :placeholder => 'Potrzebne składniki',:required => true %>
+        <%= r.text_area :instructions, :placeholder => 'Wykonanie',:required => true %>
+        <%= r.select :cuisine_id, options_for_select([['Dania główne', 1], ['Zupy', 2], ['Przystawki', 3], ['Desery', 4], ['Inne wypieki', 5]]), {:include_blank => "Wybierz typ ..."}, {:class => 'recipe-edit'} %>
         <p class="tekst"><%= r.label :image, "Zdjęcie" %></p>
         <%= r.file_field :image %>
         <%= r.submit "Create", :class => "form-btn" %>

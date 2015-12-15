@@ -17,9 +17,11 @@
 /tmp
 
 # ignore RubyMine IDE config files
+/db/seeds.rb
 .idea
 local_env.yml
 ENV.yml
+aws.yml
 .ENV
 .ENV.yml
 .s3.yml

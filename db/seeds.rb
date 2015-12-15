@@ -6,14 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-mateo = User.create(first_name: 'Mateo', last_name: 'Lazo', email: 'mateo@email.com', password: 'Mateo1', password_confirmation: 'Mateo1', editor: 'yes', admin: 'yes')
-julian = User.create(first_name: 'Julian', last_name: 'Jones', email: 'julian@email.com', password: 'Julian1', password_confirmation: 'Julian1')
-freida = User.create(first_name: 'Freida', last_name: 'Gray', email: 'freida@email.com', password: 'Freida1', password_confirmation: 'Freida1', editor: 'yes', admin: 'no')
-
-c1 = Cuisine.create(region: "Kuchnia Polska", image: "http://s3.amazonaws.com/codecademy-content/courses/rails-auth/img/czech-bun.jpg")
+mateo = User.create(first_name: 'Sylwia', last_name: 'S', email: 'swidzinska.sylwia@gmail.com', password: 'Sy123lwia&', password_confirmation: 'Sy123lwia&', editor: 'yes', admin: 'yes')
+julian = User.create(first_name: 'Vladimir', last_name: 'K', email: 'vladimir.kabar@gmail.com', password: 'Kierow123nik&', password_confirmation: 'Kierow123nik&', editor: 'yes', admin: 'yes')
 
 
-c2 = Cuisine.create(region: "Kuchnia Francuska", image: "http://s3.amazonaws.com/codecademy-content/courses/rails-auth/img/italian-gnocchi.jpg")
+c1 = Cuisine.create(region: "Dania główne", image: "http://krasnodwor.pl/wp-content/gallery/dania_glowne/386019_257205771007413_97663006_n.jpg")
 
+c2 = Cuisine.create(region: "Zupy", image: "http://czerwonyobcas.pl/wp-content/uploads/2013/02/zupa-pomidorowa.jpg")
 
-c3 = Cuisine.create(region: "Kuchnia eksperymentalna", image: "http://s3.amazonaws.com/codecademy-content/courses/rails-auth/img/japanese-sushi.jpg")
+c3 = Cuisine.create(region: "Przystawki", image: "http://jadalne-niejadalne.blog.pl/files/2014/10/dsc_0154.jpg")
+
+c4 = Cuisine.create(region: "Desery", image: "http://www.tapetus.pl/obrazki/n/172419_kolorowe-desery.jpg")
+
+c5 = Cuisine.create(region: "Inne wypieki", image: "http://polki.pl/work/privateimages/formats/V5_MT_LIFE/141636.jpg")

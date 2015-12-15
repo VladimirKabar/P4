@@ -40,6 +40,8 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
+  config.active_record.dump_schema_after_migration = false
+
   config.action_mailer.default_url_options = {:host => 'twojeprzepisy.herokuapp.com'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
@@ -49,12 +51,24 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       address: "smtp.gmail.com",
       port: 587,
-      domain: 'mail.gmail.com',
+      domain: ENV['GMAIL_DOMAIN'],
       authentication: "plain",
       enable_starttls_auto: true,
-      user_name: 'adamtestujekonto',
-      password: 'qwertY123zxc',
+      user_name: ENV['GMAIL_USERNAME'],
+      password: ENV['GMAIL_PASSWORD'],
       openssl_verify_mode:  'none'
   }
-end
+
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+          :bucket => ENV['S3_BUCKET_NAME'],
+          :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+          :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
+          :region => 'us-east-1',
+          :s3_host_name => 's3-eu-west-1.amazonaws.com'
+      }
+  }
+  Paperclip.options[:image_magick_path] = '/opt/ImageMagick/bin'
+  Paperclip.options[:command_path] = '/opt/ImageMagick/bin'
 end

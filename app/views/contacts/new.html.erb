@@ -1,10 +1,10 @@
 <div class="recipe-edit">
   <div class="container">
-    <h1> Wyślij do nas wiadomosc</h1>
+    <h1> Wyślij do nas wiadomość</h1>
     <%= simple_form_for @contact, :html => {:class => "form-horizontal"} do |f| %>
-        <%= f.input :name, :required => true %>
-        <%= f.input :email, :required => true %>
-        <%= f.input :message, :as => :text, :required => true %>
+        <%= f.input :name, :placeholder => 'np. imie i nazwisko', :required => true %>
+        <%= f.input :email, :placeholder => 'np. nazwa@nazwa.com', :required => true %>
+        <%= f.input :message, :placeholder => 'np. swietne przepise oby tak dalej!',:as => :text, :required => true %>
         <div class="hidden">
           <%= f.input :nickname, :hint => "zostaw to pole puste" %>
         </div>

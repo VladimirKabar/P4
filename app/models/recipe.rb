@@ -1,7 +1,8 @@
 class Recipe < ActiveRecord::Base
   belongs_to :cuisine
   validates_presence_of :name, :ingredients, :instructions
-  has_attached_file :image, :styles => {:small => '1366x768>'}
+  has_attached_file :image, :styles => {:small => '1366x768>'},
+                    :region => 'us-east-1'
 =begin
                     :url => '/assets/products/:id/:style/:basename.:extension',
 
